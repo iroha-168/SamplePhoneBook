@@ -7,9 +7,11 @@
 
 import SwiftUI
 
-struct ProfileRowView: View {
+struct ProfileRow: View {
     var height: CGFloat = 100
     var width = UIScreen.main.bounds.width - 10
+    var name: String?
+    var image: Image?
     
     var body: some View {
         
@@ -51,6 +53,6 @@ struct ProfileRowView: View {
 
 struct ProfileRowView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileRowView()
+        ProfileRow()
     }
 }

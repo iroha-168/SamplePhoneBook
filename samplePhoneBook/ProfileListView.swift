@@ -12,7 +12,7 @@ struct ProfileListView: View {
     var body: some View {
         VStack {
             ForEach(0 ..< 5) {_ in
-                ProfileRowView()
+                ProfileRow()
             }
         }
     }
