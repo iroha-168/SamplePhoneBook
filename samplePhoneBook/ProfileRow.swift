@@ -7,9 +7,11 @@
 
 import SwiftUI
 
-struct ProfileRowView: View {
-    var height = UIScreen.main.bounds.height
-    var width = UIScreen.main.bounds.width
+struct ProfileRow: View {
+    var height: CGFloat = 100
+    var width = UIScreen.main.bounds.width - 10
+    var name: String?
+    var image: Image?
     
     var body: some View {
         
@@ -22,7 +24,7 @@ struct ProfileRowView: View {
             VStack {
                 HStack {
                     Text("コアラ 太郎")
-                        .font(.title)
+                        .font(.title2)
                     Spacer()
                 }
                 .padding()
@@ -51,6 +53,6 @@ struct ProfileRowView: View {
 
 struct ProfileRowView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileRowView()
+        ProfileRow()
     }
 }
