@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ProfileRowView: View {
-    var height = UIScreen.main.bounds.height
-    var width = UIScreen.main.bounds.width
+    var height: CGFloat = 100
+    var width = UIScreen.main.bounds.width - 10
     
     var body: some View {
         
@@ -22,7 +22,7 @@ struct ProfileRowView: View {
             VStack {
                 HStack {
                     Text("コアラ 太郎")
-                        .font(.title)
+                        .font(.title2)
                     Spacer()
                 }
                 .padding()
