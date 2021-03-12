@@ -8,9 +8,29 @@
 import SwiftUI
 
 struct ContentView: View {
+
+    init() {
+        UITabBar.appearance().backgroundColor = UIColor.orange
+    }
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        TabView(selection: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Selection@*/.constant(1)/*@END_MENU_TOKEN@*/) {
+            TabList()
+                .tabItem {
+                    VStack {
+                        Image(systemName: "list.bullet")
+                        Text("プロフィール一覧")
+                    }
+                }.tag(1)
+            TabRegister()
+                .tabItem {
+                    VStack {
+                        Image(systemName: "person.circle.fill")
+                        Text("プロフィール登録")
+                    }
+                }.tag(2)
+        }
+        .accentColor(.orange)
     }
 }
 

@@ -14,6 +14,8 @@
 		6B05EA8525EBC402002C98F8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B05EA8425EBC402002C98F8 /* Preview Assets.xcassets */; };
 		6B05EA8825EBC402002C98F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B05EA8625EBC402002C98F8 /* LaunchScreen.storyboard */; };
 		6B165EB325F8BE7400B41F91 /* ProfileRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B165EB225F8BE7400B41F91 /* ProfileRow.swift */; };
+		6B3C236825FB0B160019994B /* TabList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3C236725FB0B160019994B /* TabList.swift */; };
+		6B3C236B25FB0B3F0019994B /* TabRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3C236A25FB0B3F0019994B /* TabRegister.swift */; };
 		6B7DF9F625FA0218007CCC09 /* ProfileListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7DF9F525FA0218007CCC09 /* ProfileListView.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +29,8 @@
 		6B05EA8725EBC402002C98F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6B05EA8925EBC402002C98F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B165EB225F8BE7400B41F91 /* ProfileRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRow.swift; sourceTree = "<group>"; };
+		6B3C236725FB0B160019994B /* TabList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabList.swift; sourceTree = "<group>"; };
+		6B3C236A25FB0B3F0019994B /* TabRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabRegister.swift; sourceTree = "<group>"; };
 		6B7DF9F525FA0218007CCC09 /* ProfileListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,6 +67,8 @@
 				6B05EA7B25EBC402002C98F8 /* AppDelegate.swift */,
 				6B05EA7D25EBC402002C98F8 /* SceneDelegate.swift */,
 				6B05EA7F25EBC402002C98F8 /* ContentView.swift */,
+				6B3C236725FB0B160019994B /* TabList.swift */,
+				6B3C236A25FB0B3F0019994B /* TabRegister.swift */,
 				6B165EB225F8BE7400B41F91 /* ProfileRow.swift */,
 				6B7DF9F525FA0218007CCC09 /* ProfileListView.swift */,
 				6B05EA8125EBC402002C98F8 /* Assets.xcassets */,
@@ -155,7 +161,9 @@
 				6B05EA7C25EBC402002C98F8 /* AppDelegate.swift in Sources */,
 				6B05EA7E25EBC402002C98F8 /* SceneDelegate.swift in Sources */,
 				6B05EA8025EBC402002C98F8 /* ContentView.swift in Sources */,
+				6B3C236B25FB0B3F0019994B /* TabRegister.swift in Sources */,
 				6B165EB325F8BE7400B41F91 /* ProfileRow.swift in Sources */,
+				6B3C236825FB0B160019994B /* TabList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
