@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TabRegister: View {
-    var width = UIScreen.main.bounds.width
+    var width = UiComponent.screenWidth
     
     var body: some View {
         VStack {
