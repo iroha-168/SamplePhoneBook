@@ -24,10 +24,15 @@ struct TabBarView: View {
                 }
             
             // View2() for profile register
-            
-            
-            
+            TabRegister()
+                .tabItem {
+                    VStack {
+                        Image(systemName: "person.circle.fill")
+                        Text("プロフィール登録")
+                    }
+                }.tag(2)
         }
+        .accentColor(.orange)
     }
 }
 

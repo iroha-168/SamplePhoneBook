@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct ProfileListView: View {
+    var width = UiComponent.screenWidth
     var numbers = [1, 2, 3, 4, 5]
+    
     var body: some View {
         VStack {
             ForEach(0 ..< 5) {_ in
