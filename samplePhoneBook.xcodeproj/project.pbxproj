@@ -16,6 +16,7 @@
 		6B165EB325F8BE7400B41F91 /* ProfileRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B165EB225F8BE7400B41F91 /* ProfileRow.swift */; };
 		6B3C236B25FB0B3F0019994B /* TabRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3C236A25FB0B3F0019994B /* TabRegister.swift */; };
 		6B7DF9F625FA0218007CCC09 /* ProfileListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7DF9F525FA0218007CCC09 /* ProfileListView.swift */; };
+		6BA7E18925FF655F00EA898D /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA7E18825FF655F00EA898D /* CustomNavigationBar.swift */; };
 		6BD2097325FC5EE00082F1D8 /* UiComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BD2097225FC5EE00082F1D8 /* UiComponent.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		6B165EB225F8BE7400B41F91 /* ProfileRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRow.swift; sourceTree = "<group>"; };
 		6B3C236A25FB0B3F0019994B /* TabRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabRegister.swift; sourceTree = "<group>"; };
 		6B7DF9F525FA0218007CCC09 /* ProfileListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileListView.swift; sourceTree = "<group>"; };
+		6BA7E18825FF655F00EA898D /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		6BD2097225FC5EE00082F1D8 /* UiComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,6 +69,7 @@
 				6B05EA7B25EBC402002C98F8 /* AppDelegate.swift */,
 				6B05EA7D25EBC402002C98F8 /* SceneDelegate.swift */,
 				6B05EA7F25EBC402002C98F8 /* TabBarView.swift */,
+				6BA7E18825FF655F00EA898D /* CustomNavigationBar.swift */,
 				6B3C236A25FB0B3F0019994B /* TabRegister.swift */,
 				6BD2097225FC5EE00082F1D8 /* UiComponent.swift */,
 				6B165EB225F8BE7400B41F91 /* ProfileRow.swift */,
@@ -161,6 +164,7 @@
 				6B05EA7C25EBC402002C98F8 /* AppDelegate.swift in Sources */,
 				6B05EA7E25EBC402002C98F8 /* SceneDelegate.swift in Sources */,
 				6B05EA8025EBC402002C98F8 /* TabBarView.swift in Sources */,
+				6BA7E18925FF655F00EA898D /* CustomNavigationBar.swift in Sources */,
 				6BD2097325FC5EE00082F1D8 /* UiComponent.swift in Sources */,
 				6B3C236B25FB0B3F0019994B /* TabRegister.swift in Sources */,
 				6B165EB325F8BE7400B41F91 /* ProfileRow.swift in Sources */,

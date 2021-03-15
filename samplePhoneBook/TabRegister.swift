@@ -8,20 +8,15 @@
 import SwiftUI
 
 struct TabRegister: View {
-    var width = UiComponent.screenWidth
-    
     var body: some View {
         VStack {
             HStack {
-                Image(systemName: "person.circle.fill")
-                    .resizable()
-                    .frame(width: 30, height: 30)
-                    .foregroundColor(.white)
-                Text("プロフィール登録")
+                CustomNavigationBar()
             }
-            .frame(width: width, height: 50)
-            .background(Color.orange)
-        Spacer()
+            Spacer()
+            
+            Text("プロフィール登録")
+            Spacer()
         }
     }
 }
