@@ -8,27 +8,30 @@
 import SwiftUI
 
 struct ProfileListView: View {
-    
     var width = UiComponent.screenWidth
-    var height = UiComponent.screenHeight - 50
     
+    init() {
+        UINavigationBar.appearance().backgroundColor = UIColor.orange
+    }
     
     var body: some View {
-        ZStack {
+        NavigationView{
             VStack {
-                ForEach(0 ..< 4) {_ in
+                ForEach(0 ..< 5){_ in
                     ProfileRow()
                 }
             }
-            VStack {
-                VStack {
-                    NavigationBarView(
-                        image: Image(systemName: "list.bullet"),
-                        titleName: "プロフィール一覧"
-                    )
-                    .frame(width: width, height: 50)
+            // ナビゲーションバータイトルをつける
+            .navigationBarTitleDisplayMode(.inline)
+            // カスタムナビゲーションを作成
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    HStack {
+                        Image(systemName: "list.bullet")
+                        Text("プロフィール登録").font(.headline)
+                    }
+                    .foregroundColor(.orange)
                 }
-                Spacer()
             }
         }
     }

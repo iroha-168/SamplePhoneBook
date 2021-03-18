@@ -11,17 +11,19 @@ struct ProfileRegisterView: View {
     var width = UiComponent.screenWidth
     
     var body: some View {
-        ZStack {
-            HStack {
-                Text(/*@START_MENU_TOKEN@*/"Placeholder"/*@END_MENU_TOKEN@*/)
-            }
+        NavigationView {
             VStack {
-                VStack {
-                    NavigationBarView(
-                        image: Image(systemName: "person.circle.fill"), titleName: "プロフィール登録"
-                    )
-                    Spacer()
+                Text("Placeholder")
+            }
+        }
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                HStack {
+                    Image(systemName: "person.circle.fill")
+                    Text("プロフィール登録").font(.headline)
                 }
+                .foregroundColor(.orange)
             }
         }
     }
