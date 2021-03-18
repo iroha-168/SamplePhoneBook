@@ -10,20 +10,24 @@ import SwiftUI
 struct ProfileRegisterView: View {
     var width = UiComponent.screenWidth
     
+    init() {
+        UINavigationBar.appearance().backgroundColor = UIColor.orange
+    }
+    
     var body: some View {
         NavigationView {
             VStack {
                 Text("Placeholder")
             }
-        }
-        .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-            ToolbarItem(placement: .principal) {
-                HStack {
-                    Image(systemName: "person.circle.fill")
-                    Text("プロフィール登録").font(.headline)
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    HStack {
+                        Image(systemName: "person.circle.fill")
+                        Text("プロフィール登録").font(.headline)
+                    }
+                    .foregroundColor(.orange)
                 }
-                .foregroundColor(.orange)
             }
         }
     }
