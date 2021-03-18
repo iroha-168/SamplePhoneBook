@@ -12,6 +12,7 @@ struct UiComponent {
     static let screenWidth = UIScreen.main.bounds.width
     // デバイスの高さ
     static let screenHeight = UIScreen.main.bounds.height
+    
 }
 
 

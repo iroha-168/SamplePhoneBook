@@ -10,17 +10,25 @@ import SwiftUI
 struct ProfileListView: View {
     
     var width = UiComponent.screenWidth
-    var numbers = [1, 2, 3, 4, 5]
+    var height = UiComponent.screenHeight - 50
+    
     
     var body: some View {
-        VStack {
-            HStack {
-                CustomNavigationBar()
+        ZStack {
+            VStack {
+                ForEach(0 ..< 4) {_ in
+                    ProfileRow()
+                }
             }
-            .frame(width: width, height: 50)
-            
-            ForEach(0 ..< 5) {_ in
-                ProfileRow()
+            VStack {
+                VStack {
+                    NavigationBarView(
+                        image: Image(systemName: "list.bullet"),
+                        titleName: "プロフィール一覧"
+                    )
+                    .frame(width: width, height: 50)
+                }
+                Spacer()
             }
         }
     }

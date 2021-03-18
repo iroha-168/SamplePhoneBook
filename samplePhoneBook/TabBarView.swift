@@ -25,7 +25,7 @@ struct TabBarView: View {
                 }
             
             // View2() for profile register
-            TabRegister()
+            ProfileRegisterView()
                 .tabItem {
                     VStack {
                         Image(systemName: "person.circle.fill")
