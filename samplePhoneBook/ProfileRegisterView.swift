@@ -1,13 +1,13 @@
 //
-//  ProfileListView.swift
+//  TabRegister.swift
 //  samplePhoneBook
 //
-//  Created by 密山 彩葉 on 2021/03/11.
+//  Created by 密山 彩葉 on 2021/03/12.
 //
 
 import SwiftUI
 
-struct ProfileListView: View {
+struct ProfileRegisterView: View {
     var width = UiComponent.screenWidth
     
     init() {
@@ -15,19 +15,15 @@ struct ProfileListView: View {
     }
     
     var body: some View {
-        NavigationView{
+        NavigationView {
             VStack {
-                ForEach(0 ..< 5){_ in
-                    ProfileRow()
-                }
+                Text("Placeholder")
             }
-            // ナビゲーションバータイトルをつける
             .navigationBarTitleDisplayMode(.inline)
-            // カスタムナビゲーションを作成
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     HStack {
-                        Image(systemName: "list.bullet")
+                        Image(systemName: "person.circle.fill")
                         Text("プロフィール登録").font(.headline)
                     }
                     .foregroundColor(.orange)
@@ -37,8 +33,8 @@ struct ProfileListView: View {
     }
 }
 
-struct ProfileListView_Previews: PreviewProvider {
+struct TabRegister_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileListView()
+        ProfileRegisterView()
     }
 }

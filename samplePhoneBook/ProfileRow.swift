@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ProfileRow: View {
     var height: CGFloat = 100
-    var width = UIScreen.main.bounds.width - 10
+    var width = UiComponent.screenWidth - 10
     var name: String?
     var image: Image?
     
