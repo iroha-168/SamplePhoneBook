@@ -8,16 +8,60 @@
 import SwiftUI
 
 struct ProfileRegisterView: View {
-    var width = UiComponent.screenWidth
     
+    @State private var name = ""
+    @State private var phoneNum = ""
+    @State private var postNum = ""
+    @State private var adress = ""
+    
+    var width = UiComponent.screenWidth
     init() {
         UINavigationBar.appearance().backgroundColor = UIColor.orange
     }
     
     var body: some View {
+        
         NavigationView {
             VStack {
-                Text("Placeholder")
+                Image("koara")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 150, height: 150)
+                    .cornerRadius(80)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 80)
+                            .stroke(
+                                Color(.systemGreen),
+                                lineWidth: 4
+                            )
+                    )
+                TextField("氏名を入力", text: $name)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
+                TextField("電話番号を入力", text: $phoneNum)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
+                
+                HStack {
+                    
+                    TextField("郵便番号を入力", text: $postNum)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding(.leading)
+                    
+                    Button(action: {
+                        // TODO: something
+                    })
+                    {
+                        Text("検索")
+                            .foregroundColor(Color(.systemGreen))
+                            .padding()
+                            .background(Color(.systemYellow))
+                            .cornerRadius(10)
+                            .frame(height: 50)
+                            .foregroundColor(Color(.systemGreen))
+                    }
+                    .padding(.trailing)
+                }
             }
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
