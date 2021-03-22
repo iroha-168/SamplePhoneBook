@@ -22,7 +22,7 @@ struct ProfileRegisterView: View {
     var body: some View {
         
         NavigationView {
-            VStack {
+            VStack(spacing: 20) {
                 Image("koara")
                     .resizable()
                     .scaledToFill()
@@ -35,12 +35,15 @@ struct ProfileRegisterView: View {
                                 lineWidth: 4
                             )
                     )
+                    .padding(30)
+
                 TextField("氏名を入力", text: $name)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding()
+                    .padding(.horizontal)
+                    
                 TextField("電話番号を入力", text: $phoneNum)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding()
+                    .padding(.horizontal)
                 
                 HStack {
                     
@@ -54,14 +57,33 @@ struct ProfileRegisterView: View {
                     {
                         Text("検索")
                             .foregroundColor(Color(.systemGreen))
-                            .padding()
+                            .frame(height: 20)
+                            .padding(10)
                             .background(Color(.systemYellow))
-                            .cornerRadius(10)
-                            .frame(height: 50)
+                            .cornerRadius(5)
                             .foregroundColor(Color(.systemGreen))
                     }
                     .padding(.trailing)
                 }
+                
+                TextField("住所を入力", text: $adress)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding(.horizontal)
+                
+                Button(action: {
+                    
+                })
+                {
+                    Text("登録する")
+                    
+                    .foregroundColor(Color(.systemGreen))
+                    .frame(width: width*0.85, height: 30)
+                    .padding(10)
+                    .background(Color(.systemYellow))
+                    .cornerRadius(5)
+                    .foregroundColor(Color(.systemGreen))
+                }
+            Spacer()
             }
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
