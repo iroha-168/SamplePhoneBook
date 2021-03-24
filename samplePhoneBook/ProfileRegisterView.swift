@@ -42,13 +42,13 @@ struct ProfileRegisterView: View {
                         .padding(30)
 
                     TextField("氏名を入力", text: $name, onCommit: {
-                        self.validateLendth()
+                        self.validateLength()
                     })
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding(.horizontal)
-                        
+                    
                     TextField("電話番号を入力", text: $phone, onCommit: {
-                        self.validateLendth()
+                        self.validateLength()
                     })
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding(.horizontal)
@@ -75,7 +75,7 @@ struct ProfileRegisterView: View {
                     }
                     
                     TextField("住所を入力", text: $adress, onCommit: {
-                        self.validateLendth()
+                        self.validateLength()
                     })
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding(.horizontal)
@@ -89,10 +89,10 @@ struct ProfileRegisterView: View {
                         .frame(width: width*0.85, height: 30)
                         .padding(10)
                         .background(Color(isDisabled ? .systemGray5 : .systemYellow))
-                        .disabled(isDisabled)
                         .cornerRadius(5)
                         .foregroundColor(Color(.systemGreen))
                     }
+                    .disabled(isDisabled)
                 Spacer()
                 }
                 .navigationBarTitleDisplayMode(.inline)
@@ -111,7 +111,7 @@ struct ProfileRegisterView: View {
     }
     
     // 入力チェック
-    private func validateLendth() {
+    private func validateLength() {
         if self.name.count > 1 && self.adress.count > 1 && self.phone.count > 1 {
             // 入力有りの場合
             isDisabled = false
