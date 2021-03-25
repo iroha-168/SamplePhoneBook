@@ -16,21 +16,29 @@ struct ProfileListView: View {
     
     var body: some View {
         NavigationView{
-            VStack {
-                ForEach(0 ..< 5){_ in
-                    ProfileRow()
-                }
-            }
-            // ナビゲーションバータイトルをつける
-            .navigationBarTitleDisplayMode(.inline)
-            // カスタムナビゲーションを作成
-            .toolbar {
-                ToolbarItem(placement: .principal) {
-                    HStack {
-                        Image(systemName: "list.bullet")
-                        Text("プロフィール登録").font(.headline)
+            ZStack {
+                Color(UIColor.systemOrange)
+                    .edgesIgnoringSafeArea(.all)
+                
+                ScrollView(.vertical, showsIndicators: false){
+                    LazyVStack {
+                        ForEach(0 ..< 10){_ in
+                            ProfileRow()
+                        }
                     }
-                    .foregroundColor(.orange)
+                }
+                .padding(.top)
+                // ナビゲーションバータイトルをつける
+                .navigationBarTitleDisplayMode(.inline)
+                // カスタムナビゲーションを作成
+                .toolbar {
+                    ToolbarItem(placement: .principal) {
+                        HStack {
+                            Image(systemName: "list.bullet")
+                            Text("プロフィール一覧").font(.headline)
+                        }
+                        .foregroundColor(.orange)
+                    }
                 }
             }
         }
