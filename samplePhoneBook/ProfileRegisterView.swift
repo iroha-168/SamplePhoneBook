@@ -21,11 +21,13 @@ struct ProfileRegisterView: View {
     }
     
     var body: some View {
-        ZStack {
-            // FIXME: 背景色を設定できない
-            Color(UIColor.systemTeal)
             
             NavigationView {
+                ZStack {
+                
+                Color(UIColor.systemOrange)
+                    .edgesIgnoringSafeArea(.all)
+                
                 VStack(spacing: 20) {
                     Image("koara")
                         .resizable()
@@ -112,12 +114,8 @@ struct ProfileRegisterView: View {
     
     // 入力チェック
     private func validateLength() {
-        if self.name.count > 1 && self.adress.count > 1 && self.phone.count > 1 {
-            // 入力有りの場合
-            isDisabled = false
-        }
+        isDisabled = self.name.count > 0 && self.adress.count > 0 && self.phone.count > 0 ? false : true
     }
-    
 }
 
 struct TabRegister_Previews: PreviewProvider {
