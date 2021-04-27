@@ -19,6 +19,8 @@ struct ContentView: View {
                 .padding()
             Button(action: {
                 // ボタンをタップした時の処理
+                // TODO: ViewModelからchangeメソッドを呼び出す
+                // TODO: クロージャで実行する処理も書いてねん
                 
             }) {
                 Text("Change String")
