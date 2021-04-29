@@ -10,14 +10,13 @@ import SwiftUI
 
 class ContentViewModel: ObservableObject {
     
-    // これがなんのためにあるのかよく分からない
     var beforeChangedString = ""
     
     // データの更新があれば自分自身を即時反映
     @Published var changedString = ""
     
     // TODO: 引数にクロージャを渡せるようにしてねん
-    func change() {
+    func change(completion: @escaping () -> Void) {
         // UI変更時の処理
         // ここでサブスレッドの処理をする
         // APIデモ
@@ -27,7 +26,10 @@ class ContentViewModel: ObservableObject {
             // TODO: ここにメインスレッドの処理を書くbyみっちゃん
             // TODO: メインスレッド内でchangedStringにbeforeChangedStringを代入してくださいな
             // TODO: ついでにメインスレッド内で非同期処理もしてくださいな
-            
+            DispatchQueue.main.async {
+                self.changedString = self.beforeChangedString
+                Text(self.changedString)
+            }
         }
     }
 }

@@ -21,6 +21,7 @@ struct ContentView: View {
                 // ボタンをタップした時の処理
                 // TODO: ViewModelからchangeメソッドを呼び出す
                 // TODO: クロージャで実行する処理も書いてねん
+                contentVM.change(completion: {Text(contentVM.changedString)})
                 
             }) {
                 Text("Change String")
