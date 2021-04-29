@@ -1,5 +1,5 @@
 //
-//  ContentViewModel.swift
+//  TestViewModel.swift
 //  samplePhoneBook
 //
 //  Created by 密山 彩葉 on 2021/04/26.
@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-class ContentViewModel: ObservableObject {
+class TestViewModel: ObservableObject {
     
     var beforeChangedString = ""
     

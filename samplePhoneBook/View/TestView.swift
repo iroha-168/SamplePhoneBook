@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  TestView.swift
 //  samplePhoneBook
 //
 //  Created by 密山 彩葉 on 2021/04/21.
@@ -8,9 +8,9 @@
 import SwiftUI
 import Dispatch
 
-struct ContentView: View {
+struct TestView: View {
     @State var string = "Hello, world!"
-    @ObservedObject var contentVM = ContentViewModel()
+    @ObservedObject var testVM = TestViewModel()
     
     
     var body: some View {
@@ -21,7 +21,7 @@ struct ContentView: View {
                 // ボタンをタップした時の処理
                 // TODO: ViewModelからchangeメソッドを呼び出す
                 // TODO: クロージャで実行する処理も書いてねん
-                contentVM.change(completion: {Text(contentVM.changedString)})
+                testVM.change(completion: () -> Void)
                 
             }) {
                 Text("Change String")
@@ -32,8 +32,8 @@ struct ContentView: View {
 
 
 
-struct ContentView_Previews: PreviewProvider {
+struct TestView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        TestView()
     }
 }
