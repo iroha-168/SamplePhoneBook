@@ -22,13 +22,14 @@ class TestViewModel: ObservableObject {
         // APIデモ
         DispatchQueue.global(qos: .default).async {
             self.beforeChangedString = "Hello " + changeLanguage()
+            // API通信するところ
             
             // TODO: ここにメインスレッドの処理を書くbyみっちゃん
             // TODO: メインスレッド内でchangedStringにbeforeChangedStringを代入してくださいな
             // TODO: ついでにメインスレッド内で非同期処理もしてくださいな
             DispatchQueue.main.async {
                 self.changedString = self.beforeChangedString
-                Text(self.changedString)
+                completion()
             }
         }
     }
