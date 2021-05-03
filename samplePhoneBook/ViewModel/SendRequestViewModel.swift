@@ -9,27 +9,42 @@ import Foundation
 import SwiftUI
 
 class SendRequestViewModel: ObservableObject {
+    @Published var changedString = ""
+    
+    func request(completion: @escaping () -> Void) {
+        
+        func sendRequest() {
+            
+            DispatchQueue.global(qos: .default).async {
+                // APIに接続
+                let view = ProfileRegisterView()
+                let zipcode = view.postNum
 
-    func sendRequest(zipcode: String) {
-        
-        guard let url = ResponseHelper.createUrl(zipcode: zipcode) else { return }
-        
-        // ===APIリクエストを送信===
-        let request = URLRequest(url: url)
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            guard let data = data else { return }
-            do {
-                // デコードする
-                let requestResults: RequestResults = try JSONDecoder().decode(RequestResults.self, from: data)
-                // checkErrorTypeを初期化
-                let value = ResponseType.init(rawValue: requestResults.status)?
-                    .checkErrorType(requestResults: requestResults)
+                guard let url = ResponseHelper.createUrl(zipcode: zipcode) else { return }
+                let request = URLRequest(url: url)
+                let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                    guard let data = data else { return }
+                    do {
+                        // デコードする
+                        let requestResults: RequestResults = try JSONDecoder().decode(RequestResults.self, from: data)
+                        // checkErrorTypeを初期化
+                        let value = ResponseType.init(rawValue: requestResults.status)?
+                            .checkErrorType(requestResults: requestResults)
+                        
+                        self.changedString = value as Any as! String
+                        
+                    } catch let error {
+                        print(error)
+                    }
+                }
+                task.resume()
                 
-            } catch let error {
-                print(error)
+                // UIに変更を加える
+                DispatchQueue.main.async {
+                    completion()
+                }
             }
         }
-        task.resume()
     }
 }
 

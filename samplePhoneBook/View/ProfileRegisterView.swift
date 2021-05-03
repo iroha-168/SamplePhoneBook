@@ -8,16 +8,19 @@
 import SwiftUI
 
 struct ProfileRegisterView: View {
+    @ObservedObject var viewModel: SendRequestViewModel
     
-    @State private var name = ""
-    @State private var adress = ""
-    @State private var phone = ""
-    @State private var postNum = ""
-    @State private var isDisabled = true
+    @State var name = ""
+    @State var adress = ""
+    @State var phone = ""
+    @State var postNum = ""
+    @State var isDisabled = true
+    @State var str = "郵便番号を入力"
     
     var width = UiComponent.screenWidth
     init() {
         UINavigationBar.appearance().backgroundColor = UIColor.orange
+        viewModel = SendRequestViewModel()
     }
     
     var body: some View {
@@ -57,12 +60,15 @@ struct ProfileRegisterView: View {
                     
                     HStack {
                         
-                        TextField("郵便番号を入力", text: $postNum)
+                        TextField(str, text: $postNum)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .padding(.leading)
                         
-                        Button(action: {
-                            // TODO: something
+                        Button(action:{
+                            // ボタンをタップした時の処理
+                            viewModel.request(completion: {
+                                str = viewModel.changedString
+                            })
                         })
                         {
                             Text("検索")
