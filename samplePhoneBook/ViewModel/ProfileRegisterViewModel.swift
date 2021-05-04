@@ -10,9 +10,9 @@ import SwiftUI
 
 class ProfileRegisterViewModel: ObservableObject {
     @Published var changedString = ""
-    
+
     func request(postNum: String, completion: @escaping () -> Void) {
-        
+
         func sendRequest() {
             // APIに接続
             let zipcode = postNum
@@ -27,13 +27,13 @@ class ProfileRegisterViewModel: ObservableObject {
                     // checkErrorTypeを初期化
                     let value = ResponseType.init(rawValue: requestResults.status)?
                         .checkErrorType(requestResults: requestResults)
-                    
+
                     // UIに変更を加える
                     DispatchQueue.main.async {
                         self.changedString = value as Any as! String
                         completion()
                     }
-                    
+
                 } catch let error {
                     print(error)
                 }
@@ -42,4 +42,5 @@ class ProfileRegisterViewModel: ObservableObject {
         }
     }
 }
+
 
