@@ -11,11 +11,10 @@ struct ProfileRegisterView: View {
     @ObservedObject var profileRegisterVM: ProfileRegisterViewModel = ProfileRegisterViewModel()
     
     @State var name = ""
-    @State var adress = ""
+    @State var address = ""
     @State var phone = ""
     @State var postNum = ""
     @State var isDisabled = true
-    @State var addressPlaceholder = "住所を入力"
     
     var width = UiComponent.screenWidth
     init() {
@@ -66,7 +65,7 @@ struct ProfileRegisterView: View {
                         Button(action:{
                             // ボタンをタップした時の処理
                             profileRegisterVM.request(postNum: postNum, completion: {
-                                addressPlaceholder = profileRegisterVM.changedString
+                                address = profileRegisterVM.changedString
                             })
                         })
                         {
@@ -81,7 +80,7 @@ struct ProfileRegisterView: View {
                         .padding(.trailing)
                     }
                     
-                    TextField(addressPlaceholder, text: $adress, onCommit: {
+                    TextField("住所を入力", text: $address, onCommit: {
                         self.validateLength()
                     })
                         .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -119,7 +118,7 @@ struct ProfileRegisterView: View {
     
     // 入力チェック
     private func validateLength() {
-        isDisabled = self.name.count > 0 && self.adress.count > 0 && self.phone.count > 0 ? false : true
+        isDisabled = self.name.count > 0 && self.address.count > 0 && self.phone.count > 0 ? false : true
     }
 }
 
