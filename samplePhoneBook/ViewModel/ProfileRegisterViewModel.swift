@@ -9,8 +9,7 @@ import Foundation
 import SwiftUI
 
 class ProfileRegisterViewModel: ObservableObject {
-    @Published var changedString = ""
-    var responseValue: ViewHelper?
+    @Published var responseValue: ViewHelper? = nil
 
     func request(postNum: String, completion: @escaping () -> Void) {
         // APIに接続
@@ -24,12 +23,12 @@ class ProfileRegisterViewModel: ObservableObject {
                 // デコードする
                 let requestResults: RequestResults = try JSONDecoder().decode(RequestResults.self, from: data)
                 // checkErrorTypeを初期化
-                self.responseValue = ResponseType.init(rawValue: requestResults.status)?
-                    .checkErrorType(requestResults: requestResults)
+//                self.responseValue = ResponseType.init(rawValue: requestResults.status)?
+//                    .checkErrorType(requestResults: requestResults)
 
                 // UIに変更を加える
                 DispatchQueue.main.async {
-                    self.changedString = (self.responseValue?.string)!
+                    self.responseValue = ResponseType.init(rawValue: requestResults.status)?.checkErrorType(requestResults: requestResults)
                     completion()
                 }
 

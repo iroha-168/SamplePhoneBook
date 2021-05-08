@@ -65,7 +65,7 @@ struct ProfileRegisterView: View {
                         Button(action:{
                             // ボタンをタップした時の処理
                             profileRegisterVM.request(postNum: postNum, completion: {
-                                address = profileRegisterVM.changedString
+                                address = profileRegisterVM.responseValue as Any as! String
                             })
                         })
                         {
