@@ -22,9 +22,6 @@ class ProfileRegisterViewModel: ObservableObject {
             do {
                 // デコードする
                 let requestResults: RequestResults = try JSONDecoder().decode(RequestResults.self, from: data)
-                // checkErrorTypeを初期化
-//                self.responseValue = ResponseType.init(rawValue: requestResults.status)?
-//                    .checkErrorType(requestResults: requestResults)
 
                 // UIに変更を加える
                 DispatchQueue.main.async {
