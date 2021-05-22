@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct ProfileRegisterView: View {
+    @ObservedObject var profileRegisterVM: ProfileRegisterViewModel = ProfileRegisterViewModel()
     
-    @State private var name = ""
-    @State private var adress = ""
-    @State private var phone = ""
-    @State private var postNum = ""
-    @State private var isDisabled = true
+    @State var name = ""
+    @State var address = ""
+    @State var phone = ""
+    @State var postNum = ""
+    @State var isDisabled = true
     
     var width = UiComponent.screenWidth
     init() {
@@ -61,8 +62,12 @@ struct ProfileRegisterView: View {
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .padding(.leading)
                         
-                        Button(action: {
-                            // TODO: something
+                        Button(action:{
+                            // ボタンをタップした時の処理
+                            profileRegisterVM.request(postNum: postNum, completion: {
+                                guard let wrappedAddress = profileRegisterVM.responseValue?.string else { return }
+                                address = wrappedAddress
+                            })
                         })
                         {
                             Text("検索")
@@ -76,7 +81,7 @@ struct ProfileRegisterView: View {
                         .padding(.trailing)
                     }
                     
-                    TextField("住所を入力", text: $adress, onCommit: {
+                    TextField("住所を入力", text: $address, onCommit: {
                         self.validateLength()
                     })
                         .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -114,7 +119,7 @@ struct ProfileRegisterView: View {
     
     // 入力チェック
     private func validateLength() {
-        isDisabled = self.name.count > 0 && self.adress.count > 0 && self.phone.count > 0 ? false : true
+        isDisabled = self.name.count > 0 && self.address.count > 0 && self.phone.count > 0 ? false : true
     }
 }
 
