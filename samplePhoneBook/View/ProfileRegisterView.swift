@@ -65,8 +65,7 @@ struct ProfileRegisterView: View {
                         Button(action:{
                             // ボタンをタップした時の処理
                             profileRegisterVM.request(postNum: postNum, completion: {
-                                guard let unwrappedAddress = profileRegisterVM.responseValue else { return }
-                                guard let wrappedAddress = unwrappedAddress.string else { return }
+                                guard let wrappedAddress = profileRegisterVM.responseValue?.string else { return }
                                 address = wrappedAddress
                             })
                         })
